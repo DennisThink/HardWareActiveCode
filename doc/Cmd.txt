@@ -1,0 +1,2 @@
+ openssl genrsa -out privatekey.txt 1024 
+ openssl rsa -in privatekey.txt -pubout -out publickey.txt
