@@ -70,8 +70,10 @@ int main()
 	{
 		if (CCodeVerify::GetSerialNumber("pubKey.pem", strSerivalNumber))
 		{
+			std::cout << "--------------------------------------------------------" << std::endl;
 			std::cout << " SerialNumberLen	:  " << strSerivalNumber.length() << std::endl;
 			std::cout << "SerivalNumber		:  " << strSerivalNumber << std::endl;
+			std::cout << "--------------------------------------------------------" << std::endl;
 		}
 
 		std::string strActiveCode;
@@ -79,14 +81,18 @@ int main()
 		std::string strSignOther = "ABCDEFGH";
 		if (CCodeVerify::CreateActiveNumber("prikey.pem", strSerivalNumber, strSignDate, strSignOther, strActiveCode))
 		{
+			std::cout << "--------------------------------------------------------" << std::endl;
 			std::cout << "ActiveCodeLen:  " << strActiveCode.length() << std::endl;
 			std::cout << "ActiveCode : " << strActiveCode << std::endl;
+			std::cout << "--------------------------------------------------------" << std::endl;
 		}
 		std::string strVerifyDate;
 		std::string strVerifyOther;
 		if (CCodeVerify::VerifyActiveNumber("pubKey.pem", strActiveCode, strVerifyDate, strVerifyOther))
 		{
+			std::cout << "--------------------------------------------------------" << std::endl;
 			std::cout << "UntilDate " << strVerifyDate << "   OtherInfo:" << strVerifyOther << std::endl;
+			std::cout << "--------------------------------------------------------" << std::endl;
 		}
 		else
 		{
